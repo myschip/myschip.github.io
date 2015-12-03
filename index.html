@@ -57,7 +57,7 @@ require_once '../../lib/ipu_app.inc.php';<br>
 
 <p>Fourthly, create ip_updater.php file in /usr/local/ispconfig/interface/web/tools/ and paste ip_updater.php code to it or use wget as follows:<br>
 sudo cd /usr/local/ispconfig/interface/web/tools<br>
-sudo wget <a href="https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php">https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</a></p>
+sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</p>
 
 <h3>
 <a id="how-to-guides-5" class="anchor" href="#how-to-guides-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #5</h3>
@@ -68,8 +68,8 @@ sudo wget <a href="https://raw.githubusercontent.com/ahrasis/IP_Updater/master/i
 <h3>
 <a id="how-to-guides-6" class="anchor" href="#how-to-guides-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #6</h3>
 
-<p>Create cron job using sudo crontab -e or ISPConfig control panel. The timing is up to you but I would suggest to add one at every reboot and the other, every hour on selected minute e.g.:<br>
-<a href="https://github.com/reboot" class="user-mention">@reboot</a> php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php<br>
+<p>Create cron job using sudo crontab -e (in terminal, not in the ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br>
+@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php<br>
 18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</p>
 
 <h3>
