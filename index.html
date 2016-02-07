@@ -19,7 +19,7 @@
       <h3>
 <a id="welcome-to-dynamic-ip-updater-for-ispconfig-server" class="anchor" href="#welcome-to-dynamic-ip-updater-for-ispconfig-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Dynamic IP Updater for ISPConfig Server.</h3>
 
-<p>This <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Automatic Updater</a> is designed and created especially for those who is using dynamic IP for their ISPConfig Server instead of static IP as usually required. When it is setup using cron job as described in the how to guids below, the IP Updater will update the dynamic IP and resync it accordingly.</p><br>
+<p>This <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Automatic Updater</a> is designed and created especially for those who is using dynamic IP for their ISPConfig Server instead of static IP as usually required. When it is setup using cron job as described in the how to guids below, the IP Updater will update the dynamic IP and resync it accordingly.</p>
 
 <h3>
 <a id="how-to-guides-1" class="anchor" href="#how-to-guides-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #1</h3>
@@ -27,7 +27,7 @@
 <p>Firstly, you will need to copy resync.php to ipu_resync.php and app.inc.php to ipu_app.inc.php. In ubuntu-based server, to copy the files to new names, basically just type:<br></p>
 <code>sudo cp /usr/local/ispconfig/interface/web/tools/resync.php /usr/local/ispconfig/interface/web/tools/ipu_resync.php<br><br>
 sudo cp /usr/local/ispconfig/interface/lib/app.inc.php /usr/local/ispconfig/interface/lib/ipu_app.inc.php</code>
-<br><br>
+<br>
 
 <h3>
 <a id="how-to-guides-2" class="anchor" href="#how-to-guides-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #2</h3>
@@ -47,7 +47,7 @@ require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';<br>
 ...<br>
 // $app-&gt;tpl_defaults();<br>
 // $app-&gt;tpl-&gt;pparse();</code>
-<br><br>
+<br>
 
 
 <h3>
@@ -55,7 +55,7 @@ require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';<br>
 
 <p>Thirdly, in the other newly copied file - ipu_app.inc.php, disable start_session() by commenting out the line as follows:<br></p>
 <code>// session_start();</code>
-<br><br>
+<br>
 
 <h3>
 <a id="how-to-guides-4" class="anchor" href="#how-to-guides-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #4</h3>
@@ -63,7 +63,7 @@ require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';<br>
 <p>Fourthly, create ip_updater.php file in /usr/local/ispconfig/interface/web/tools/ and paste <a href="https://github.com/ahrasis/IP_Updater">ip_updater.php</a> code to it or use wget to ge it instead, as follows:<br></p>
 <code>sudo cd /usr/local/ispconfig/interface/web/tools<br><br>
 sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code>
-<br><br>
+<br>
 
 <h3>
 <a id="how-to-guides-5" class="anchor" href="#how-to-guides-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #5</h3>
@@ -71,7 +71,7 @@ sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater
 <p>Lastly, create two cron jobs using sudo crontab -e in terminal or ssh (but not in via ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br></p>
 <code>@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php<br>
 18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code>
-<br><br>
+<br>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
