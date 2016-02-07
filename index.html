@@ -38,17 +38,17 @@ At the beginning:<br>
 <code>require_once '/usr/local/ispconfig/interface/lib/config.inc.php';</code><br>
 <code>require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';</code><br>
 <br>
-Under; //* Check permissions for module<br>
+Then under: //* Check permissions for module<br>
 <code>// $app-&gt;auth-&gt;check_module_permissions('admin');</code><br>
 <br>
-Under: //* This is only allowed for administrators<br>
+Then under: //* This is only allowed for administrators<br>
 <code>// if(!$app-&gt;auth-&gt;is_admin()) die('only allowed for administrators.');</code><br>
 <br>
-Further down:<br>
+Then further down:<br>
 <code>// $app-&gt;tpl-&gt;setVar('msg', $msg);</code><br>
 <code>// $app-&gt;tpl-&gt;setVar('error', $error);</code><br>
 <br>
-Further down:<br>
+Lastly, further down:<br>
 <code>// $app-&gt;tpl_defaults();</code><br>
 <code>// $app-&gt;tpl-&gt;pparse();</code>
 <br>
