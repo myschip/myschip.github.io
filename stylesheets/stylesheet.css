@@ -247,7 +247,7 @@ a {
 /* Additional Stylings */
 
 @media screen and (max-width: 64em) {
-  p {
+  p, code {
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
     word-wrap: break-word;
