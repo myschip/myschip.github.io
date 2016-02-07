@@ -122,7 +122,8 @@ a {
   font-size: 0.9rem;
   color: #383e41;
   background-color: #f3f6fa;
-  border: 0 2px 0 2px solid #73AD21;
+  border: 2px solid #73AD21;
+  border-style: none solid none solid;
   border-radius: 0.3rem; }
 .main-content pre {
   padding: 0.8rem;
