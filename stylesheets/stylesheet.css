@@ -117,12 +117,13 @@ a {
   text-align: justify;
   margin-bottom: 1em; }
 .main-content code {
+  margin-top: 5px;
   padding: 5px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #383e41;
   background-color: #f3f6fa;
-  border: 2px solid #73AD21;
+  border: 3px solid #73AD21;
   border-style: none solid none solid;
   border-radius: 0.3rem; }
 .main-content pre {
