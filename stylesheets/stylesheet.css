@@ -117,7 +117,6 @@ a {
   text-align: justify;
   margin-bottom: 1em; }
 .main-content code {
-  margin: 5px 0 0;
   padding: 5px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
@@ -138,7 +137,7 @@ a {
   border-radius: 0.3rem; }
   .main-content pre > code {
     padding: 0;
-    margin: 0;
+    margin: 5px;
     font-size: 0.9rem;
     color: #567482;
     word-break: normal;
