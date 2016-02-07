@@ -31,8 +31,8 @@ sudo cp /usr/local/ispconfig/interface/lib/app.inc.php /usr/local/ispconfig/inte
 <h3>
 <a id="how-to-guides-2" class="anchor" href="#how-to-guides-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #2</h3>
 
-<p>Secondly, in the newly copied file - ipu_resync.php, change require_once from app.inc.php to ipu_app.inc.php, and disable admin check and tpl by commenting out the lines, as follows:<br>
-require_once '../../lib/ipu_app.inc.php';<br>
+<p>Secondly, in the newly copied file - ipu_resync.php, change require_once from app.inc.php to ipu_app.inc.php, and disable admin check and tpl by commenting out the lines, as follows:<br></p>
+<code>require_once '../../lib/ipu_app.inc.php';<br>
 ...<br>
 //* Check permissions for module<br>
 // $app-&gt;auth-&gt;check_module_permissions('admin');<br>
@@ -44,27 +44,30 @@ require_once '../../lib/ipu_app.inc.php';<br>
 // $app-&gt;tpl-&gt;setVar('error', $error);<br>
 ...<br>
 // $app-&gt;tpl_defaults();<br>
-// $app-&gt;tpl-&gt;pparse();</p>
-
+// $app-&gt;tpl-&gt;pparse();</code>
+<br>
 <h3>
 <a id="how-to-guides-3" class="anchor" href="#how-to-guides-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #3</h3>
 
-<p>Thirdly, in the other newly copied file - ipu_app.inc.php, disable start_session() by commenting out the line as follows:<br>
-// session_start();</p>
+<p>Thirdly, in the other newly copied file - ipu_app.inc.php, disable start_session() by commenting out the line as follows:<br></p>
+<code>// session_start();</code>
+<br>
 
 <h3>
 <a id="how-to-guides-4" class="anchor" href="#how-to-guides-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #4</h3>
 
-<p>Fourthly, create ip_updater.php file in /usr/local/ispconfig/interface/web/tools/ and paste <a href="https://github.com/ahrasis/IP_Updater">ip_updater.php</a> code to it or use wget to ge it instead, as follows:<br>
-sudo cd /usr/local/ispconfig/interface/web/tools<br>
-sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</p>
+<p>Fourthly, create ip_updater.php file in /usr/local/ispconfig/interface/web/tools/ and paste <a href="https://github.com/ahrasis/IP_Updater">ip_updater.php</a> code to it or use wget to ge it instead, as follows:<br></p>
+<code>sudo cd /usr/local/ispconfig/interface/web/tools<br><br>
+sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code>
+<br>
 
 <h3>
 <a id="how-to-guides-5" class="anchor" href="#how-to-guides-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #5</h3>
 
-<p>Lastly, create two cron jobs using sudo crontab -e in terminal or ssh (but not in via ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br>
-@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php<br>
-18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</p>
+<p>Lastly, create two cron jobs using sudo crontab -e in terminal or ssh (but not in via ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br></p>
+<code>@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php<br>
+18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code>
+<br>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
