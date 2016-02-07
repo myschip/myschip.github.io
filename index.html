@@ -32,7 +32,7 @@ sudo cp /usr/local/ispconfig/interface/lib/app.inc.php /usr/local/ispconfig/inte
 <h3>
 <a id="how-to-guides-2" class="anchor" href="#how-to-guides-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #2</h3>
 
-<p>Secondly, in the newly copied file - ipu_resync.php, change require_once from app.inc.php to ipu_app.inc.php, give both required files a full path (to avoid errors), and disable admin check and tpl by commenting out the lines, as follows:<br></p>
+<p>Secondly, in the newly copied file - ipu_resync.php, in /usr/local/ispconfig/interface/web/tools/, change require_once from app.inc.php to ipu_app.inc.php, (give both required files a full path to avoid errors), and disable admin check and tpl by commenting out the lines, as follows:<br></p>
 <code>require_once '/usr/local/ispconfig/interface/lib/config.inc.php';<br>
 require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';<br>
 ...<br>
@@ -53,7 +53,7 @@ require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';<br>
 <h3>
 <a id="how-to-guides-3" class="anchor" href="#how-to-guides-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #3</h3>
 
-<p>Thirdly, in the other newly copied file - ipu_app.inc.php, disable start_session() by commenting out the line as follows:<br></p>
+<p>Thirdly, in the other newly copied file - ipu_app.inc.php, in /usr/local/ispconfig/interface/lib/, disable start_session() by commenting out the line as follows:<br></p>
 <code>// session_start();</code>
 <br>
 
