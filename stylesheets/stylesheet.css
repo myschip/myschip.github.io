@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  text-align: justify;
   line-height: 1.5;
   color: #606c71; }
 
@@ -115,9 +114,10 @@ a {
   font-weight: normal;
   color: #159957; }
 .main-content p {
+  text-align: justify;
   margin-bottom: 1em; }
 .main-content code {
-  padding: 2px 4px;
+  padding: 5px 0;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #383e41;
