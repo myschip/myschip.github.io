@@ -76,7 +76,7 @@ Lastly, further down:<br>
 <p>Lastly, create two cron jobs using sudo crontab -e in terminal or ssh (but not in via ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br></p>
 <code>@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code><br>
 <code>18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code><br>
-(change the path from /web/tools/ to /lib/ if using the alternative step below)<br>
+(you may ignore this if you use the alternative step below)<br>
 
 <h3>
 <a id="how-to-guides-6" class="anchor" href="#how-to-guides-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #6</h3>
@@ -86,6 +86,9 @@ Lastly, further down:<br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ipu_resync.php</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ipu_app.inc.php</code><br>
+<code>sudo cd /etc/cron.d</code><br>
+<code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater</code><br>
+
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
