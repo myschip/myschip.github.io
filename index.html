@@ -24,65 +24,9 @@
 <p>This <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Auto Updater</a> is designed and created especially for those who are using dynamic IP for their Debian / Ubuntu <a href="http://www.ispconfig.org">ISPConfig 3</a> Server instead of static IP as usually required. When it is setup using cron job as described in the how to guids below, the IP Updater will update the dynamic IP in ISPConfig 3 Server and resync it accordingly.</p>
 
 <h3>
-<a id="how-to-guides-1" class="anchor" href="#how-to-guides-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #1</h3>
+<a id="how-to-guides-6" class="anchor" href="#how-to-guides-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>The How To Guide</h3>
 
-<p>Firstly, you will need to copy resync.php to ipu_resync.php and app.inc.php to ipu_app.inc.php. In ubuntu-based server, to copy the files to new names, basically just type:<br></p>
-<code>sudo cp /usr/local/ispconfig/interface/web/tools/resync.php /usr/local/ispconfig/interface/web/tools/ipu_resync.php</code><br>
-<code>sudo cp /usr/local/ispconfig/interface/lib/app.inc.php /usr/local/ispconfig/interface/lib/ipu_app.inc.php</code>
-<br>
-
-<h3>
-<a id="how-to-guides-2" class="anchor" href="#how-to-guides-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #2</h3>
-
-<p>Secondly, in the newly copied file - ipu_resync.php, in /usr/local/ispconfig/interface/web/tools/, change require_once from app.inc.php to ipu_app.inc.php, (give both required files a full path to avoid errors), and disable admin check and tpl by commenting out the lines, as follows:<br></p>
-At the beginning:<br>
-<code>require_once '/usr/local/ispconfig/interface/lib/config.inc.php';</code><br>
-<code>require_once '/usr/local/ispconfig/interface/lib/ipu_app.inc.php';</code><br>
-(you may ignore this if you use the last alternative step)<br>
-<br>
-Then under: //* Check permissions for module<br>
-<code>// $app-&gt;auth-&gt;check_module_permissions('admin');</code><br>
-<br>
-Then under: //* This is only allowed for administrators<br>
-<code>// if(!$app-&gt;auth-&gt;is_admin()) die('only allowed for administrators.');</code><br>
-<br>
-Then further down:<br>
-<code>// $app-&gt;tpl-&gt;setVar('msg', $msg);</code><br>
-<code>// $app-&gt;tpl-&gt;setVar('error', $error);</code><br>
-<br>
-Lastly, further down:<br>
-<code>// $app-&gt;tpl_defaults();</code><br>
-<code>// $app-&gt;tpl-&gt;pparse();</code>
-<br>
-
-
-<h3>
-<a id="how-to-guides-3" class="anchor" href="#how-to-guides-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #3</h3>
-
-<p>Thirdly, in the other newly copied file - ipu_app.inc.php, in /usr/local/ispconfig/interface/lib/, disable start_session() by commenting out the line as follows:<br></p>
-<code>// session_start();</code>
-<br>
-
-<h3>
-<a id="how-to-guides-4" class="anchor" href="#how-to-guides-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #4</h3>
-
-<p>Fourthly, create ip_updater.php file in /usr/local/ispconfig/interface/web/tools/ and paste <a href="https://github.com/ahrasis/IP_Updater">ip_updater.php</a> code to it or use wget to get it instead, as follows:<br></p>
-<code>cd /usr/local/ispconfig/interface/web/tools</code><br>
-<code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code>
-<br>
-
-<h3>
-<a id="how-to-guides-5" class="anchor" href="#how-to-guides-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #5</h3>
-
-<p>Lastly, create two cron jobs using sudo crontab -e in terminal or ssh (but not in via ISPConfig control panel). The timing is up to you but I would suggest to add one at every reboot and the other, at least every hour on selected minute e.g.:<br></p>
-<code>@reboot php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code><br>
-<code>18 * * * * php -q /usr/local/ispconfig/interface/web/tools/ip_updater.php</code><br>
-(you may ignore this if you use the alternative step below)<br>
-
-<h3>
-<a id="how-to-guides-6" class="anchor" href="#how-to-guides-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #6</h3>
-
-<p>Alternatively, if you are using 3.1 version of ISPConfig or too busy to copy, create, rename or edit all of the above said files, then simply use wget to get ip_updater.php, ipu_resync.php and ipu_app.inc.php into /usr/local/ispconfig/interface/lib/ folder together with ip_updater for cron, as follows:<br></p>
+<p>Whether you are using ISPConfig version 3.0 or 3.1 or too busy to copy, create, rename or edit all relevant files as shwon steps-by-steps in <a href="/oldways">Dynamic IP Auto Updater old page</a>, then simply use wget to get ip_updater.php, ipu_resync.php and ipu_app.inc.php into /usr/local/ispconfig/interface/lib/ folder together with ip_updater for cron job, then, you are good to go:<br></p>
 <code>cd /usr/local/ispconfig/interface/lib</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ipu_resync.php</code><br>
@@ -90,12 +34,11 @@ Lastly, further down:<br>
 <code>cd /etc/cron.d</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater</code><br>
 
-
 <h3>
 <a id="important-note" class="anchor" href="#important-note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important Note</h3>
 
 <p>As an important note, this ip updater is only changing the ip address for ISPConfig 3 and not for the server and not at the respective dynamic dns site such as <a href="https://www.zoneedit.com">Zoneedit</a>. You will need to install a specific software utility to perform dynamic dns updates like <a href="https://sourceforge.net/p/ddclient/wiki/Home">ddclient</a> of which its guides may be found in <a href="https://help.ubuntu.com/community/DynamicDNS#Using_a_software_utility_to_perform_Dynamic_DNS_Updates">ubuntu help site</a> and <a href="http://stealcode.blogspot.com/2009/02/howto-setup-ddclient-zoneedit-ubuntu.html">some blogs</a>. We really suggest to use <a href="http://ip.sch.my/">our site</a> at <a href="http://ip.sch.my/">http://ip.sch.my</a> for updating ip using ddclient or this ip updater.</p>
-<p>Below is sample for /etc/ddclient.conf</p>
+<p>Below is sample for /etc/ddclient.conf that is using <a href="https://www.zoneedit.com">Zoneedit</a>.</p>
 <p>daemon=600<br>
 pid=/var/run/ddclient.pid<br>
 ssl=yes<br>
