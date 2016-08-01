@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Dynamic IP Auto Updater for Debian / Ubuntu ISPConfig 3.0 Server</title>
+    <title>Dynamic IP Auto Updater for Debian / Ubuntu ISPConfig 3 Server - Old Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,7 +13,8 @@
     <section class="page-header">
       <h1 class="project-name">Dynamic IP Auto Updater</h1>
       <h1 class="project-name">for Debian / Ubuntu</h1>
-      <h1 class="project-name">ISPConfig 3.0 Server</h1>
+      <h1 class="project-name">ISPConfig 3 Server</h1>
+      <h1 class="project-name">- Old Page</h1>
       <h2 class="project-tagline">Dynamic, IP, Auto, Updater, Debian, Ubuntu, ISPConfig, Server</h2>
     </section>
 
@@ -23,7 +24,7 @@
 
 <p>This <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Auto Updater</a> is designed and created especially for those who are using dynamic IP for their Debian / Ubuntu <a href="http://www.ispconfig.org">ISPConfig 3.0</a> server instead of static IP as usually required. When it is setup using cron job as described in the how to guids below, the IP Updater will update the dynamic IP in ISPConfig 3.0 server and resync it accordingly.</p>
 
-<p>We are still using the same files for ISPConfig 3.0 and 3.1 server, so the new, easier and simpler instructions in the main page also work in ISPConfig 3.0 server and vice versa. This page is kept to show how edits were done on the two main files taken from ISPConfig 3.0 for creating this <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Auto Updater</a>.</p>
+<p>We are still using the same files for ISPConfig 3.0 and 3.1 server, so the new, easier and simpler instructions in the main page also work in ISPConfig 3.0 server and vice versa. This old page is kept to show how edits were done on the two main files taken from ISPConfig 3.0 for creating this <a href="https://github.com/ahrasis/IP_Updater">Dynamic IP Auto Updater</a>.</p>
 
 <h3>
 <a id="how-to-guides-1" class="anchor" href="#how-to-guides-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Guides #1</h3>
@@ -84,7 +85,7 @@ This upgraded code should work at least on php5.5, 5.6 and 7.0.<br>
 <a id="important-note" class="anchor" href="#important-note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important Note</h3>
 
 <p>As an important note, this ip updater is only changing the ip address for ISPConfig 3 and not for the server and not at the respective dynamic dns site such as <a href="https://www.zoneedit.com">Zoneedit</a>. You will need to install a specific software utility to perform dynamic dns updates like <a href="https://sourceforge.net/p/ddclient/wiki/Home">ddclient</a> of which its guides may be found in <a href="https://help.ubuntu.com/community/DynamicDNS#Using_a_software_utility_to_perform_Dynamic_DNS_Updates">ubuntu help site</a> and <a href="http://stealcode.blogspot.com/2009/02/howto-setup-ddclient-zoneedit-ubuntu.html">some blogs</a>. We really suggest to use <a href="http://ip.sch.my/">our site</a> at <a href="http://ip.sch.my/">http://ip.sch.my</a> for updating ip using ddclient or this ip updater.</p>
-<p>Below is sample for /etc/ddclient.conf</p>
+<p>Below is sample for /etc/ddclient.conf that is using <a href="https://www.zoneedit.com">Zoneedit</a>.</p>
 <p>daemon=600<br>
 pid=/var/run/ddclient.pid<br>
 ssl=yes<br>
