@@ -31,8 +31,6 @@
 <p>The new script file will be checking for your ip_updater.php file before executing it. The reason for this addup checking is if you install and uninstal or upgrade ISPConfig, there is a chance that the whole folder including ip_updater will be deleted. If that happens, the script will get all the files again before executing ip_updater. Just copy paste these lines unto your terminal and you are good to go:<br></p>
 <code>cd /usr/local/ispconfig/interface/lib</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code><br>
-<code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ipu_resync.php</code><br>
-<code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ipu_app.inc.php</code><br>
 <code>cd /etc/cron.d</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater</code><br>
 <code>mkdir /usr/share/ip_updater</code><br>
