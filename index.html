@@ -28,7 +28,9 @@
 
 <p>Whether you are using ISPConfig version 3.0 or 3.1 and too busy to copy, create, rename or edit all relevant files manually, then simply use wget to get ip_updater.php into /usr/local/ispconfig/interface/lib/ folder together with ip_updater for cron job.<br><br></p>
       
-<p>The new script file will be checking for your ip_updater.php file before executing it. The reason for this addup checking is if you install and uninstal or upgrade ISPConfig, there is a chance that the whole folder including ip_updater will be deleted. If that happens, the script will get all the files again before executing ip_updater. Just copy paste these lines unto your terminal and you are good to go:<br></p>
+<p>The new script file will be checking for your ip_updater.php file before executing it. The reason for this addup checking is if you install and uninstal or upgrade ISPConfig, there is a chance that the whole folder including ip_updater will be deleted. If that happens, the script will get all the files again before executing ip_updater.<br><br></p>
+
+<p>Just copy paste these lines unto your terminal and you are good to go:<br></p>
 <code>cd /usr/local/ispconfig/interface/lib</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.php</code><br>
 <code>cd /etc/cron.d</code><br>
@@ -37,12 +39,14 @@
 <code>cd /usr/share/ip_updater</code><br>
 <code>sudo wget https://raw.githubusercontent.com/ahrasis/IP_Updater/master/ip_updater.sh</code><br>
 <code>sudo chmod +x ip_updater.sh</code><br>
-<code>cd /home</code><br>
+<code>exit</code><br>
 
 <h3>
 <a id="important-note" class="anchor" href="#important-note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important Note</h3>
 
-<p>As an important note, this ip updater is only changing the ipv4 ip address in ISPConfig 3 database and websites and not for the server and not at the respective dynamic dns site such as <a href="https://www.zoneedit.com">Zoneedit</a>. You will need to install a specific software utility to perform dynamic dns updates like <a href="https://sourceforge.net/p/ddclient/wiki/Home">ddclient</a> of which its guides may be found in <a href="https://help.ubuntu.com/community/DynamicDNS#Using_a_software_utility_to_perform_Dynamic_DNS_Updates">ubuntu help site</a> and <a href="http://stealcode.blogspot.com/2009/02/howto-setup-ddclient-zoneedit-ubuntu.html">some blogs</a>. We really suggest to use <a href="http://ip.sch.my/">our site</a> at <a href="http://ip.sch.my/">http://ip.sch.my</a> for updating ip using ddclient or this ip updater.</p>
+<p>As an important note, this ip updater is only changing the ipv4 ip address in ISPConfig 3 database and websites and not for the server and not at the respective dynamic dns site such as <a href="https://www.zoneedit.com">Zoneedit</a>. You will need to install a specific software utility to perform dynamic dns updates like <a href="https://sourceforge.net/p/ddclient/wiki/Home">ddclient</a> of which its guides may be found in <a href="https://help.ubuntu.com/community/DynamicDNS#Using_a_software_utility_to_perform_Dynamic_DNS_Updates">ubuntu help site</a> and <a href="http://stealcode.blogspot.com/2009/02/howto-setup-ddclient-zoneedit-ubuntu.html">some blogs</a>.</p>
+
+<p>We really suggest to use <a href="http://ip.sch.my/">our site</a> at <a href="http://ip.sch.my/">http://ip.sch.my</a> for updating ip using ddclient or this ip updater.</p>
 <p>Below is a sample for /etc/ddclient.conf that is using <a href="https://www.zoneedit.com">Zoneedit</a>.</p>
 <p>daemon=600<br>
 pid=/var/run/ddclient.pid<br>
